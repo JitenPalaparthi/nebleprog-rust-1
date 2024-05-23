@@ -1,14 +1,16 @@
 ### Compile C files
 
-```
-gcc -shared -o libmylib.dylib -fPIC mylib.c
-or 
-clang -shared -o mylib.dylib -fPIC mylib.c
-```
+
 
 1. make sure you have tool chain to compile either gcc or clang
 2. on all unix based machines "lib" is prefixed to the actual library.Means libmylib.dylib on mac is nothing but mylib.dylib. 
 3. libmylib.so on unix is nothig but mylib.so
+    - generate shared library using 
+```
+gcc -shared -o libmylib.dylib -fPIC mylib.c
+or 
+clang -shared -o mylib.dylib -fPIC mylib.c
+``` 
 4. Make sure the .dylib or .so or .dll(windows) in the root directory of your rust application. If not set the below 
     - Library Path Environment Variable:
     - If the shared library is not in the same directory, you might need to add its location to the DYLD_LIBRARY_PATH environment variable
